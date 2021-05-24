@@ -100,6 +100,20 @@
             //print error message if regex test is failed
                 telError.textContent = "Contact number is Incorrect";              
         });
+
+        //UC-4 Validation for password
+        const pwd = document.querySelector('#pwd');                             
+        const pwdError = document.querySelector('.pwd-error');
+        pwd.addEventListener('input',function() {
+            //Rule1 – minimum 8 Characters
+            let pwdRegex = RegExp('(?=.*\d)(?=.*[a-z]).{8,}');                   
+            if(pwdRegex.test(pwd.value))
+                pwdError.textContent = "";
+            else
+            //print error message if regex test is failed
+                pwdError.textContent = "Minimum 8 characters";                  
+        });
+
     </script>
 </body>
 </html>
